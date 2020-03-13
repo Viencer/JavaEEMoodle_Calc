@@ -11,24 +11,26 @@
     <title>Show Card</title>
 </head>
 <body>
-<%
-    Calc calc = (Calc) session.getAttribute("calc");
-    if (Calc.getAction().equals("plus")) {
-        out.println("Sum " + Calc.sum(Calc.getA(), Calc.getB()));
-    }
-    if (Calc.getAction().equals("minus")) {
-        out.println("Minus " + Calc.minus(Calc.getA(), Calc.getB()));
-    }
-    if (Calc.getAction().equals("mozh")) {
-        out.println("Mnozh " + Calc.mnozh(Calc.getA(), Calc.getB()));
-    }
-    if (Calc.getAction().equals("dil")) {
-        if (Calc.getB() == 0) {
-            out.println("delenie na 0");
-        } else {
-            out.println("Del " + Calc.dil(Calc.getA(), Calc.getB()));
+<h1>
+    <%
+        Calc calc = (Calc) session.getAttribute("calc");
+        if (Calc.getAction().equals("plus")) {
+            out.println("Sum " + Calc.sum(Calc.getA(), Calc.getB()));
         }
-    }
-%>
+        if (Calc.getAction().equals("minus")) {
+            out.println("Minus " + Calc.minus(Calc.getA(), Calc.getB()));
+        }
+        if (Calc.getAction().equals("mozh")) {
+            out.println("Mnozh " + Calc.mnozh(Calc.getA(), Calc.getB()));
+        }
+        if (Calc.getAction().equals("dil")) {
+            if (Calc.getB() == 0) {
+                out.println("delenie na 0");
+            } else {
+                out.println("Del " + Calc.dil(Calc.getA(), Calc.getB()));
+            }
+        }
+    %>
+</h1>
 </body>
 </html>
